@@ -216,11 +216,11 @@ fn main() {
 	);
 
 	while window.is_open() && !window.is_key_down(Key::Q) {
-		// DEBUG
-		println!(
-			"a min, a max, b min, b max, a mid, b mid, range: {:?}",
-			(&mut a_min, &mut a_max, &mut b_min, &mut b_max, a_mid, b_mid, range)
-		);
+		// @DEBUG
+		// println!(
+		// 	"a min, a max, b min, b max, a mid, b mid, range: {:?}",
+		// 	(&mut a_min, &mut a_max, &mut b_min, &mut b_max, a_mid, b_mid, range)
+		// );
 
 		let frame_start = Instant::now();
 
@@ -235,8 +235,8 @@ fn main() {
 				update_ab_minmax(
 					&mut a_min, &mut a_max, &mut b_min, &mut b_max, a_mid, b_mid, range,
 				);
-				// @DEBUG
-				println!("a min, max, mid: {} {} {}", a_min, a_max, a_mid)
+			// @DEBUG
+			// println!("a min, max, mid: {} {} {}", a_min, a_max, a_mid)
 			} else if window.is_key_down(Key::Minus) {
 				range *= 1.25;
 				update_ab_minmax(
