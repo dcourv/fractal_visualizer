@@ -26,7 +26,7 @@ const DEFAULT_FRACT_FN: fn(f64, f64) -> (bool, usize) = mandelbrot;
 
 // }
 
-fn map(x: usize, old_lo: usize, old_hi: usize, new_lo: u32, new_hi: u32) -> u32 {
+fn _map(x: usize, old_lo: usize, old_hi: usize, new_lo: u32, new_hi: u32) -> u32 {
 	return new_lo
 		+ (((x - old_lo) as f64 / (old_hi - old_lo) as f64) * (new_hi - new_lo) as f64) as u32;
 }
@@ -86,7 +86,7 @@ fn mandelbrot(c_re: f64, c_im: f64) -> (bool, usize) {
 	(true, MAX_ITERS)
 }
 
-fn test1(c_re: f64, c_im: f64) -> (bool, usize) {
+fn _test1(c_re: f64, c_im: f64) -> (bool, usize) {
 	let mut a = 0f64;
 	let mut b = 0f64;
 
@@ -137,7 +137,7 @@ fn test(c_re: f64, c_im: f64) -> (bool, usize) {
 	(true, MAX_ITERS)
 }
 
-fn mzoom(nc_re: f64, nc_im: f64, n: f64) -> (bool, usize) {
+fn _mzoom(nc_re: f64, nc_im: f64, n: f64) -> (bool, usize) {
 	let mut a = 0.;
 	let mut b = 0.;
 
@@ -287,7 +287,7 @@ fn main() {
 			for y in 0..HEIGHT {
 				let mut c_re = a_min;
 				for x in 0..WIDTH {
-					// DEBUG
+					// @DEBUG
 					// let c_re_alt = map_fl(x, 0, WIDTH, a_min, a_max);
 					// let c_im_alt = map_fl(y, 0, HEIGHT, b_min, b_max);
 
